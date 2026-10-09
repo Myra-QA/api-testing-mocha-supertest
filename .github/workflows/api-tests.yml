@@ -1,0 +1,41 @@
+
+name: API Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      BASE_URL: ${{ vars.BASE_URL }}
+      API_USERNAME: ${{ secrets.API_USERNAME }}
+      API_PASSWORD: ${{ secrets.API_PASSWORD }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run API tests and generate report
+        run: npm run test:report
+
+      - name: Upload Mochawesome report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: mochawesome-report
+          path: mochawesome-report/
+          if-no-files-found: warn
+          retention-days: 14

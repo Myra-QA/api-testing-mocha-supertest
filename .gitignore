@@ -1,0 +1,16 @@
+
+# Environment variables
+.env
+
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# Generated test reports
+mochawesome-report/
+
+# Test output and logs
+coverage/
+*.log
