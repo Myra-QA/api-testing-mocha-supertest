@@ -1,6 +1,6 @@
 # API Testing with Mocha & SuperTest
 
-![API Tests]([![API Tests](https://github.com/Myra-QA/api-testing-mocha-supertest/actions/workflows/api-tests.yml/badge.svg?branch=main)](https://github.com/Myra-QA/api-testing-mocha-supertest/actions/workflows/api-tests.yml))
+[![API Tests](https://github.com/Myra-QA/api-testing-mocha-supertest/actions/workflows/api-tests.yml/badge.svg?branch=main)](https://github.com/Myra-QA/api-testing-mocha-supertest/actions/workflows/api-tests.yml)
 
 A JavaScript API test automation project using **Mocha, SuperTest, AJV, and Mochawesome**, tested against the [DummyJSON API](https://dummyjson.com/).
 
